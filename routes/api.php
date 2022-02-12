@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\MeController;
+use App\Http\Controllers\CashController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,9 @@ use App\Http\Controllers\Auth\MeController;
 Auth::loginUsingId(1);
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/me', MeController::class);
+
+    Route::prefix('cash')->group(function () {
+        Route::post('create', [CashController::class, 'store']);
+        Route::get('/', [CashController::class, 'index']);
+    });
 });

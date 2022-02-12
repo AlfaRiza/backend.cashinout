@@ -11,4 +11,6 @@ class Cash extends Model
 
     protected $guarded = ['id','user_id'];
 
+    protected $dates = ['when'];
+
 }

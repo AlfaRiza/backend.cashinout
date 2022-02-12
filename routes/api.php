@@ -17,7 +17,7 @@ use App\Http\Controllers\CashController;
 */
 
 
-Auth::loginUsingId(1);
+// Auth::loginUsingId(1);
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/me', MeController::class);
 
